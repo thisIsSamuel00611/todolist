@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Samuel's ToDo List</title>
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="fonts/font-awesome.min.css">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <header>
+        <nav
+            class="navbar navbar-expand py-3 px-3 d-flex justify-content-center align-items-center bg-secondary text-white mb-5">
+            <div class=" headerTxt">
+                <h1>My ToDo List</h1>
+            </div>
+        </nav>
+    </header>
+    <div class="container">
+        <section id="mainSect" class="p-3">
+            <div class="inputForTD d-flex">
+                <input type="text" id="tdInput" class="" onkeypress="if (window.event.keyCode == 13) addItem()"
+                    placeholder="Title...">
+                <button type="button" class="btn btn-outline-warning" onclick="addItem()">Add</button>
+            </div>
+
+            <div class="alertPar">
+                <div id="alert" class="alert alert-danger mt-3 font-weight-bold">*You must have a title or the list
+                    already contains this title!</div>
+            </div>
+        </section>
+        <section class="tableSect">
+            <div class="tableWrapper container">
+                <table class="table mt-4 table-striped px-5 rounded">
+                    <thead>
+                    <tr>
+                        <td class="pl-5">ToDo</td>
+                        <td class="pr-5 text-right">Action</td>
+                    </tr>
+                </thead>
+                    <tbody id="tableBody" class="">
+                    </tbody>
+                </table>
+            </div>
+        </section>
+    </div>
+    <script>
+        var todo = [];
+        var tableBody = document.getElementById('tableBody');
+        var inputElement = document.getElementById("tdInput");
+        function addItem(e) {
+            var tr = document.createElement('tr')
+            var td = document.createElement('td');
+            var alert = document.getElementById("alert");
+            if (inputElement.value && !todo.includes(inputElement.value)) {
+                todo.push(inputElement.value)
+                alert.classList.remove("cusShow")
+            }
+            else {
+                alert.classList.add("cusShow");
+                return
+            }
+            for (let i = 0; i < todo.length; i++) {
+                tableBody.appendChild(tr);
+                tr.innerHTML = `
+                    
+                <td><div>${todo[i]}</div></td>
+                <td class="d-flex justify-content-end"><i class="fa fa-trash delBtn" onclick="deleteTodo(this)"></i></td>
+                `
+                console.log(todo[i])
+            }
+            console.log(todo);
+            inputElement.value = null;
+        }
+        function deleteTodo(e) {
+            e.parentElement.parentElement.remove();
+            todo.forEach(e => {
+                if (e.match(inputElement.value)) {
+                    todo.pop([e])
+                }
+            });
+        }
+    </script>
+</body>
+
+</html>

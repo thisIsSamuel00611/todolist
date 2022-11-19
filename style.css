@@ -1,0 +1,116 @@
+#mainSect .inputForTD {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#mainSect .inputForTD #tdInput {
+  padding: 10px !important;
+  width: 300px;
+  min-width: 300px;
+  border: 2px solid #ccc;
+  border-radius: 15px;
+}
+
+#mainSect .inputForTD #tdInput:focus {
+  outline-color: #fc4500;
+}
+#mainSect .inputForTD button {
+  height: 43px;
+  margin: 0 20px !important;
+  width: 70px !important;
+  text-align: center !important;
+  border-radius: 10px !important;
+  border: 2px solid #ccc !important;
+}
+#mainSect .inputForTD button:focus {
+  outline: #fc4500 !important;
+  border: none !important;
+  transition: 0.2s linear;
+}
+
+#tableBody .delBtn {
+  padding: 15px;
+  background-color: rgba(252, 67, 0, 0.7725490196);
+}
+#tableBody tr div {
+  transform: translateY(50%);
+}
+
+#mainSect .inputForTD button:focus {
+  outline: #fc4500 !important;
+  border: none !important;
+  transition: 0.2s linear;
+}
+
+#mainSect .alert {
+  width: 370px !important;
+  display: flex;
+  justify-content: center !important;
+  margin-right: 25px !important;
+  display: none;
+}
+
+.cusShow {
+  display: block !important;
+  -webkit-animation: cusShow 0.3s ease-in-out 1;
+          animation: cusShow 0.3s ease-in-out 1;
+}
+
+@-webkit-keyframes cusShow {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+    transition: 0.3s ease;
+  }
+}
+
+@keyframes cusShow {
+  0% {
+    transform: translateY(-50%);
+  }
+  100% {
+    transform: translateY(0);
+    transition: 0.3s ease;
+  }
+}
+#mainSect .alertPar {
+  display: flex;
+  justify-content: center !important;
+}
+
+#tableBody tr div {
+  transform: translateY(50%);
+  font-size: 17px;
+  font-weight: bold;
+}
+
+.tableSect {
+  border-radius: 20px;
+}
+.tableSect .container {
+  max-width: 800px;
+}
+
+#tableBody table {
+  margin-top: 100px !important;
+}
+#tableBody tr td {
+  padding-right: 70px !important;
+  padding-left: 70px !important;
+}
+
+#tableBody .delBtn {
+  padding: 15px 16px;
+  border-radius: 100%;
+  background-color: rgba(252, 69, 0, 0.7725490196);
+}
+
+#tableBody .delBtn:hover {
+  background-color: #fc4500;
+  color: #ffffff;
+  cursor: pointer;
+  transition: 0.2s all;
+}/*# sourceMappingURL=style.css.map */
